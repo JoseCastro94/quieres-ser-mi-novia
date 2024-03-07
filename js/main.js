@@ -2,6 +2,7 @@ const btnSi = document.getElementById('btnSi');
 const btnNo = document.getElementById('btnNo');
 const imagen = document.getElementById('imagen');
 const mensaje = document.getElementById('mensaje');
+const carpetaIMG = './img/';
 const imagenes = [
     "1.gif",
     "2.gif",
@@ -18,12 +19,12 @@ btnSi.addEventListener('click', function () {
     Swal.fire({
         title: '¡Sabia que dirías que sí!',
         text: '¡Eres mi novia ahora! 😊😘',
-        imageUrl: 'img/image_SI.gif',
+        imageUrl: carpetaIMG + 'image_SI.gif',
         confirmButtonText: 'Cerrar'
     }).then((result) => {
         felicidades();
         clearInterval(interval);
-        imagen.src = "/img/image_OK.gif";
+        imagen.src =  carpetaIMG + "image_OK.gif";
         btnSi.style.display = 'none';
         btnNo.style.display = 'none';
         mensaje.textContent = '❤ ¡Eres la casualidad más bonita que me ha pasado! 🥰❤';
@@ -51,7 +52,7 @@ const interval = setInterval(() => {
         index = 0;
     }
 
-    imagen.src = '/img/' + imagenes[index];
+    imagen.src = carpetaIMG + imagenes[index];
 }, 3000);
 
 
